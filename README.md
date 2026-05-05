@@ -7,7 +7,7 @@ Built with React for frontend, Node/Express for backend, MongoDB for Database an
 
 ## Demo Link
 
-[Live Demo] (https://neogcamp-ecommerce-app-frontend.vercel.app/)
+[Live Demo](https://neogcamp-ecommerce-app-frontend.vercel.app/)
 
 ---
 
@@ -36,7 +36,7 @@ npm run dev
 ## Demo Video
 
 Watch a walkthrough of all the major features of this app:
-[Loom Video] (https://www.loom.com/share/85d1591ee2a748498fdcd023f394e2db)
+[Loom Video](https://www.loom.com/share/85d1591ee2a748498fdcd023f394e2db)
 
 ---
 
@@ -44,44 +44,44 @@ Watch a walkthrough of all the major features of this app:
 
 **Home**
 
-- Display links to navigate to different pages such as Home, Book listing page, Wishlist page, Cart Page and user Profile page.
-- Search books by title.
-- Display top rated books.
+- Displays navigation links to Home, Book Listing, Wishlist, Cart, and User Profile pages.
+- Enables users to search books by title.
+- Displays top-rated books.
 
 **Product Listing**
 
-- Display all the books in a card format with cover page image, title, author, rating, price.
-- Filters to filter books based on price, category and rating.
-- Buttons to view book details and add it to cart and icon to add book to wishlist.
+- Displays all books in a structured card format with cover image, title, author, rating, and price.
+- Applies filters based on price, category, and rating.
+- Provides options to view book details, add books to cart, and add books to wishlist.
 
 **Product Detail**
 
-- Display all the details of the product.
-- Buttons to add book to cart and buy it and icon to add book to wishlist.
+- Displays complete details of a selected book.
+- Allows users to add the book to cart, buy instantly, or add to wishlist.
 
 **Wishlist**
 
-- Display all the items added to the wishlist and their number.
-- Remove item from wishlist.
+- Displays all wishlist items along with their total count.
+- Removes items from the wishlist.
 
 **Cart**
 
-- Display all the items added to the cart and their number.
-- Increase, decrease the quantity of the items.
-- Remove the item from cart.
+- Displays all cart items along with their total count.
+- Increases or decreases the quantity of items.
+- Removes items from the cart.
 
 **User Profile**
 
-- Display user details such as Nmae, email, contact number and addresses.
-- Can add, edit and delete address.
+- Displays user details such as Name, email, contact number, and addresses.
+- Allows users to add, edit, and delete addresses.
 
 **Order**
 
-- Display all the orders with day and date user has placed.
+- Displays all orders with day and date of placement.
 
 **Order Details**
 
-- Display all the details of the order placed with delivery address, date and time, product details.
+- Displays complete order information including delivery address, date, time, and product details.
 
 ---
 
@@ -99,7 +99,7 @@ Sample Response:<br>
 
 ### **GET /books/:id**<br>
 
-List details of one book<br>
+List details of single book<br>
 
 Sample Response:<br>
 
@@ -119,7 +119,7 @@ Sample Response:<br>
 
 ### **POST /cart**<br>
 
-Add new item in cart<br>
+Adds a new item to the cart<br>
 
 Sample Response:<br>
 
@@ -129,7 +129,7 @@ Sample Response:<br>
 
 ### **POST /cart/increase/:id**<br>
 
-Increase the quantity of item in cart<br>
+Increases the quantity of a cart item<br>
 
 Sample Response:<br>
 
@@ -139,7 +139,7 @@ Sample Response:<br>
 
 ### **POST /cart/decrease/:id**<br>
 
-Decrease the quantity of item in cart<br>
+Decreases the quantity of a cart item<br>
 
 Sample Response:<br>
 
@@ -149,7 +149,7 @@ Sample Response:<br>
 
 ### **DELETE /cart/:id**<br>
 
-Delete item from the cart<br>
+Removes an item from the cart<br>
 
 Sample Response:<br>
 
@@ -159,7 +159,7 @@ Sample Response:<br>
 
 ### **GET /wishlist**<br>
 
-Display all the item in the wishlist<br>
+List all the item in the wishlist<br>
 
 Sample Response:<br>
 
@@ -169,7 +169,7 @@ Sample Response:<br>
 
 ### **POST /wishlist/:id**<br>
 
-Add item in the wishlist<br>
+Adds an item to the wishlist<br>
 
 Sample Response:<br>
 
@@ -179,7 +179,7 @@ Sample Response:<br>
 
 ### **DELETE /wishlist/:id**<br>
 
-Delete item in the wishlist<br>
+Removes an item from the wishlist<br>
 
 Sample Response:<br>
 
