@@ -7,15 +7,15 @@ Built with React for frontend, Node/Express for backend, MongoDB for Database an
 
 ## Demo Link
 
-[Live Demo](https://neogcamp-ecommerce-app-frontend.vercel.app/)
+[Live Demo](https://book-cart-ecommerce-app-frontend.vercel.app/)
 
 ---
 
 ## Quick Start
 
 ```
-git clone https://github.com/patilVikrant/neogcamp-ecommerceApp-frontend.git
-cd neogcamp-ecommerceApp-frontend
+git clone https://github.com/patilVikrant/bookCart-ecommerceApp-frontend.git
+cd bookCart-ecommerceApp-frontend
 npm install
 npm run dev
 ```
