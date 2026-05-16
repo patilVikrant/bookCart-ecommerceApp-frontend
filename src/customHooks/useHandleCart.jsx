@@ -1,7 +1,7 @@
 export const getCartItems = async () => {
   try {
     const response = await fetch(
-      "https://neogcamp-ecommerce-app-backend.vercel.app/cart",
+      "https://book-cart-ecommerce-app-backend.vercel.app/cart",
     );
     return response.json();
   } catch (error) {
@@ -12,7 +12,7 @@ export const getCartItems = async () => {
 export const addItemToCart = async (book) => {
   try {
     const response = await fetch(
-      "https://neogcamp-ecommerce-app-backend.vercel.app/cart",
+      "https://book-cart-ecommerce-app-backend.vercel.app/cart",
       {
         method: "POST",
         headers: {
@@ -37,7 +37,7 @@ export const addItemToCart = async (book) => {
 export const increaseItemQuantityInCart = async (id) => {
   try {
     const response = await fetch(
-      `https://neogcamp-ecommerce-app-backend.vercel.app/cart/increase/${id}`,
+      `https://book-cart-ecommerce-app-backend.vercel.app/cart/increase/${id}`,
       {
         method: "POST",
       },
@@ -58,7 +58,7 @@ export const increaseItemQuantityInCart = async (id) => {
 export const decreaseItemQuantityInCart = async (id) => {
   try {
     const response = await fetch(
-      `https://neogcamp-ecommerce-app-backend.vercel.app/cart/decrease/${id}`,
+      `https://book-cart-ecommerce-app-backend.vercel.app/cart/decrease/${id}`,
       {
         method: "POST",
       },
@@ -79,7 +79,7 @@ export const decreaseItemQuantityInCart = async (id) => {
 export const deleteItemFromCart = async (id) => {
   try {
     const response = await fetch(
-      `https://neogcamp-ecommerce-app-backend.vercel.app/cart/${id}`,
+      `https://book-cart-ecommerce-app-backend.vercel.app/cart/${id}`,
       {
         method: "DELETE",
       },

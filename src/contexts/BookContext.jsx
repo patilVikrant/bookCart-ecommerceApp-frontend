@@ -56,7 +56,7 @@ export function BookProvider({ children }) {
   const [searchText, setSearchText] = useState("");
   const deliveryCharges = 199;
   const { data: booksData, loading } = useBooksData(
-    "https://neogcamp-ecommerce-app-backend.vercel.app/books",
+    "https://book-cart-ecommerce-app-backend.vercel.app/books",
   );
   // console.log(cartItems);
 

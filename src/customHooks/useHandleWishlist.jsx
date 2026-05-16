@@ -1,7 +1,7 @@
 export const getWishlist = async () => {
   try {
     const response = await fetch(
-      "https://neogcamp-ecommerce-app-backend.vercel.app/wishlist",
+      "https://book-cart-ecommerce-app-backend.vercel.app/wishlist",
     );
     return response.json();
   } catch (error) {
@@ -12,7 +12,7 @@ export const getWishlist = async () => {
 export const addToWishlist = async (book) => {
   try {
     const response = await fetch(
-      "https://neogcamp-ecommerce-app-backend.vercel.app/wishlist",
+      "https://book-cart-ecommerce-app-backend.vercel.app/wishlist",
       {
         method: "POST",
         headers: {

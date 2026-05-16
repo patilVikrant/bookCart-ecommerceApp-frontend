@@ -1,7 +1,7 @@
 export const getAllAddresses = async () => {
   try {
     const response = await fetch(
-      "https://neogcamp-ecommerce-app-backend.vercel.app/address",
+      "https://book-cart-ecommerce-app-backend.vercel.app/address",
     );
     return response.json();
   } catch (error) {
@@ -12,7 +12,7 @@ export const getAllAddresses = async () => {
 export const addNewAddress = async (newAddress) => {
   try {
     const response = await fetch(
-      "https://neogcamp-ecommerce-app-backend.vercel.app/address",
+      "https://book-cart-ecommerce-app-backend.vercel.app/address",
       {
         method: "POST",
         headers: {
@@ -37,7 +37,7 @@ export const addNewAddress = async (newAddress) => {
 export const editAddress = async (id, updatedAddress) => {
   try {
     const response = await fetch(
-      `https://neogcamp-ecommerce-app-backend.vercel.app/address/${id}`,
+      `https://book-cart-ecommerce-app-backend.vercel.app/address/${id}`,
       {
         method: "POST",
         headers: {
@@ -62,7 +62,7 @@ export const editAddress = async (id, updatedAddress) => {
 export const removeAddress = async (id) => {
   try {
     const response = await fetch(
-      `https://neogcamp-ecommerce-app-backend.vercel.app/address/${id}`,
+      `https://book-cart-ecommerce-app-backend.vercel.app/address/${id}`,
       {
         method: "DELETE",
       },
