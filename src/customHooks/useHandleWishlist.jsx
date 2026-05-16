@@ -37,7 +37,7 @@ export const addToWishlist = async (book) => {
 export const removeFromWishlist = async (id) => {
   try {
     const response = await fetch(
-      `https://neogcamp-ecommerce-app-backend.vercel.app/wishlist/${id}`,
+      `https://book-cart-ecommerce-app-backend.vercel.app/wishlist/${id}`,
       {
         method: "DELETE",
       },
