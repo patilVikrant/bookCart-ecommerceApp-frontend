@@ -59,8 +59,8 @@ const ProductListing = () => {
     setItemRating("");
   };
 
-  const filteredBooks =
-    priceRange || itemCategory.length !== 0 || itemRating
+  const filteredBooks = books
+    ? priceRange || itemCategory.length !== 0 || itemRating
       ? books.filter((book) => {
           const bookPrice = priceRange ? book.price < Number(priceRange) : true;
 
@@ -75,7 +75,8 @@ const ProductListing = () => {
 
           return bookPrice && bookCategory && bookRating;
         })
-      : books;
+      : books
+    : [];
   // console.log(filteredBooks);
 
   const showAllBooks = () => {
