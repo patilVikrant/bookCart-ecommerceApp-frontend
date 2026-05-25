@@ -214,74 +214,80 @@ const ProductListing = () => {
           {/* Books Section */}
           <div className={filterDisplay ? "col-lg-9" : "col-12"}>
             <div className="row g-4 pb-5 mb-5">
-              {filteredBooks.length !== 0 ? (
-                filteredBooks.map((book) => (
-                  <div
-                    key={book._id}
-                    className="col-12 col-sm-6 col-md-4 col-lg-3"
-                  >
-                    <div className="card h-100 shadow-sm rounded-3 overflow-hidden border-0">
-                      <div className="position-relative bg-white p-2">
-                        <img
-                          src={book.image}
-                          className="card-img-top"
-                          alt="book-cover-page"
-                          style={{
-                            height: imageHeight,
-                            objectFit: "contain",
-                            width: "100%",
-                          }}
-                        />
-                        <span
-                          className="badge rounded-pill text-bg-light py-2 position-absolute top-0 end-0 m-3"
-                          onClick={() => toggleWishlistItems(book._id)}
-                          role="button"
-                          style={{ cursor: "pointer" }}
-                        >
-                          {wishlistItems.find((item) => item._id == book._id)
-                            ? "❤"
-                            : "🤍"}
-                        </span>
-                      </div>
-
-                      <div className="card-body d-flex flex-column">
-                        <h5 className="card-title">{book.title}</h5>
-                        <p className="card-text mb-1">
-                          <strong>Author:</strong> {book.author}
-                        </p>
-                        <p className="card-text mb-1">
-                          <strong>Rating:</strong> {book.rating}
-                        </p>
-                        <p className="card-text mb-3">
-                          <strong>Price:</strong> INR {book.price}
-                        </p>
-
-                        <div className="mt-auto">
-                          <Link
-                            to={`/books/${book._id}`}
-                            className="btn btn-primary w-100 mb-2"
+              {books ? (
+                filteredBooks.length !== 0 ? (
+                  filteredBooks.map((book) => (
+                    <div
+                      key={book._id}
+                      className="col-12 col-sm-6 col-md-4 col-lg-3"
+                    >
+                      <div className="card h-100 shadow-sm rounded-3 overflow-hidden border-0">
+                        <div className="position-relative bg-white p-2">
+                          <img
+                            src={book.image}
+                            className="card-img-top"
+                            alt="book-cover-page"
+                            style={{
+                              height: imageHeight,
+                              objectFit: "contain",
+                              width: "100%",
+                            }}
+                          />
+                          <span
+                            className="badge rounded-pill text-bg-light py-2 position-absolute top-0 end-0 m-3"
+                            onClick={() => toggleWishlistItems(book._id)}
+                            role="button"
+                            style={{ cursor: "pointer" }}
                           >
-                            Details
-                          </Link>
-                          <button
-                            className="btn btn-outline-secondary w-100"
-                            onClick={() => addToCart(book)}
-                            disabled={cartItems.some(
-                              (item) => item._id == book._id,
-                            )}
-                          >
-                            {cartItems.some((item) => item._id == book._id)
-                              ? "Added to Cart"
-                              : "Add to Cart"}
-                          </button>
+                            {wishlistItems.find((item) => item._id == book._id)
+                              ? "❤"
+                              : "🤍"}
+                          </span>
+                        </div>
+
+                        <div className="card-body d-flex flex-column">
+                          <h5 className="card-title">{book.title}</h5>
+                          <p className="card-text mb-1">
+                            <strong>Author:</strong> {book.author}
+                          </p>
+                          <p className="card-text mb-1">
+                            <strong>Rating:</strong> {book.rating}
+                          </p>
+                          <p className="card-text mb-3">
+                            <strong>Price:</strong> INR {book.price}
+                          </p>
+
+                          <div className="mt-auto">
+                            <Link
+                              to={`/books/${book._id}`}
+                              className="btn btn-primary w-100 mb-2"
+                            >
+                              Details
+                            </Link>
+                            <button
+                              className="btn btn-outline-secondary w-100"
+                              onClick={() => addToCart(book)}
+                              disabled={cartItems.some(
+                                (item) => item._id == book._id,
+                              )}
+                            >
+                              {cartItems.some((item) => item._id == book._id)
+                                ? "Added to Cart"
+                                : "Add to Cart"}
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  ))
+                ) : (
+                  <div className="col-12 text-center py-5">
+                    <h4>No books found matching your filters</h4>
                   </div>
-                ))
+                )
               ) : (
                 <div className="col-12 text-center py-5">
-                  <h4>No books found matching your filters</h4>
+                  <p>Loading...</p>
                 </div>
               )}
             </div>
