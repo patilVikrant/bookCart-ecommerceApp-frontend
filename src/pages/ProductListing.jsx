@@ -85,7 +85,7 @@ const ProductListing = () => {
     resetFilters();
   };
 
-  const imageHeight = filterDisplay ? "340px" : "280px";
+  const imageHeight = filterDisplay ? "290px" : "240px";
 
   return (
     <div className="bg-body-tertiary py-4">
@@ -223,22 +223,29 @@ const ProductListing = () => {
                       className="col-12 col-sm-6 col-md-4 col-lg-3"
                     >
                       <div className="card h-100 shadow-sm rounded-3 overflow-hidden border-0">
-                        <div className="position-relative bg-white p-2">
+                        <div
+                          className="position-relative bg-white"
+                          style={{
+                            height: imageHeight,
+                            overflow: "hidden",
+                          }}
+                        >
                           <img
                             src={book.image}
                             className="card-img-top"
                             alt="book-cover-page"
                             style={{
-                              height: imageHeight,
-                              objectFit: "contain",
                               width: "100%",
+                              height: "100%",
+                              objectFit: "cover",
+                              objectPosition: "center top",
                             }}
                           />
                           <span
                             className="badge rounded-pill text-bg-light py-2 position-absolute top-0 end-0 m-3"
                             onClick={() => toggleWishlistItems(book._id)}
                             role="button"
-                            style={{ cursor: "pointer" }}
+                            style={{ cursor: "pointer", zIndex: 10 }}
                           >
                             {wishlistItems.find((item) => item._id == book._id)
                               ? "❤"
