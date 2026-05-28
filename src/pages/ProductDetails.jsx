@@ -37,74 +37,106 @@ const ProductDetails = () => {
       <div className="container pb-5">
         {loading && <p>Loading...</p>}
         {requiredBook && (
-          <div className="d-flex gap-4 bg-white row">
-            <div
-              className="p-2 col-md-4 position-relative m-2"
-              style={{ width: "300px", height: "400px" }}
-            >
-              <img
-                src={requiredBook.image}
-                className="rounded w-100 h-50"
-                alt="Book-cover-page"
-              />
-              <span
-                className="badge rounded-pill text-bg-light py-2 position-absolute top-0 end-0 m-2"
-                onClick={() => toggleWishlistItems(requiredBook._id)}
-                role="button"
-              >
-                {isBookAddedToWishlist ? "❤" : "🤍"}
-              </span>
-              <div>
-                <button
-                  className="btn btn-primary w-100 my-2"
-                  onClick={handleBuyNow}
-                >
-                  Buy Now
-                </button>
-                {isAddedToCart ? (
-                  <Link to="/cart" className="btn btn-secondary w-100">
-                    Item in cart
-                  </Link>
-                ) : (
-                  <button
-                    className="btn btn-secondary w-100"
-                    onClick={() => addToCart(requiredBook._id)}
-                  >
-                    Add to cart
-                  </button>
-                )}
+          <div className="bg-white p-4 rounded shadow-sm">
+            <div className="row g-4">
+              <div className="col-12 col-lg-5">
+                <div style={{ width: "260px", margin: "0 auto" }}>
+                  <div className="position-relative mb-3">
+                    <img
+                      src={requiredBook.image}
+                      alt={requiredBook.title}
+                      className="w-100 rounded-3"
+                    />
+
+                    <span
+                      className="badge rounded-pill text-bg-light py-2 position-absolute"
+                      style={{
+                        top: "10px",
+                        right: "10px",
+                        cursor: "pointer",
+                        fontSize: "1.1rem",
+                      }}
+                      onClick={() => toggleWishlistItems(requiredBook._id)}
+                      role="button"
+                    >
+                      {isBookAddedToWishlist ? "❤" : "🤍"}
+                    </span>
+                  </div>
+
+                  <div>
+                    <button
+                      className="btn btn-primary w-100 my-2"
+                      onClick={handleBuyNow}
+                    >
+                      Buy Now
+                    </button>
+
+                    {isAddedToCart ? (
+                      <Link to="/cart" className="btn btn-secondary w-100">
+                        Item in cart
+                      </Link>
+                    ) : (
+                      <button
+                        className="btn btn-secondary w-100"
+                        onClick={() => addToCart(requiredBook._id)}
+                      >
+                        Add to cart
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="p-2 col-md-8">
-              <h1>{requiredBook.title}</h1>
-              <p>Rating: {requiredBook.rating}</p>
-              <p>Author: {requiredBook.author}</p>
-              <p>Category: {requiredBook.category}</p>
-              <p>Publication House: {requiredBook.publicationHouse}</p>
-              {isAddedToCart ? (
+
+              <div className="col-12 col-lg-7">
+                <h2 className="mb-3">{requiredBook.title}</h2>
+
                 <p>
-                  <button
-                    className="btn btn-outline-secondary me-3"
-                    onClick={() => decreaseItemQuantity(id)}
-                  >
-                    -
-                  </button>
-                  {isAddedToCart.quantity}
-                  <button
-                    className="btn btn-outline-secondary ms-3"
-                    onClick={() => increaseItemQuantity(id)}
-                  >
-                    +
-                  </button>
+                  Rating:{" "}
+                  <span className="fw-semibold">{requiredBook.rating}</span>
                 </p>
-              ) : (
-                ""
-              )}
-              <hr />
-              <h2>INR {requiredBook.price}</h2>
-              <hr />
-              <p>Description</p>
-              <p>{requiredBook.description}</p>
+                <p>
+                  Author:{" "}
+                  <span className="fw-semibold">{requiredBook.author}</span>
+                </p>
+                <p>
+                  Category:{" "}
+                  <span className="fw-semibold">{requiredBook.category}</span>
+                </p>
+                <p>
+                  Publication House:{" "}
+                  <span className="fw-semibold">
+                    {requiredBook.publicationHouse}
+                  </span>
+                </p>
+
+                {isAddedToCart && (
+                  <div className="my-3">
+                    Quantity:{" "}
+                    <button
+                      className="btn btn-outline-secondary btn-sm me-2"
+                      onClick={() => decreaseItemQuantity(id)}
+                    >
+                      -
+                    </button>
+                    <span className="mx-2 fw-semibold">
+                      {isAddedToCart.quantity}
+                    </span>
+                    <button
+                      className="btn btn-outline-secondary btn-sm ms-2"
+                      onClick={() => increaseItemQuantity(id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                )}
+
+                <hr />
+                <h3 className="fw-bold">INR {requiredBook.price}</h3>
+                <hr />
+
+                <h5>Description</h5>
+                <p className="text-muted">{requiredBook.description}</p>
+              </div>
             </div>
           </div>
         )}

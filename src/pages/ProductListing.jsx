@@ -265,16 +265,16 @@ const ProductListing = () => {
                             <strong>Price:</strong> INR {book.price}
                           </p>
 
-                          <div className="mt-auto">
+                          <div className="mt-auto d-flex flex-column gap-3">
                             <Link
                               to={`/books/${book._id}`}
-                              className="btn btn-primary w-100 mb-2"
+                              className="btn btn-primary w-100 px-0"
                             >
                               Details
                             </Link>
                             <button
-                              className="btn btn-outline-secondary w-100"
-                              onClick={() => addToCart(book)}
+                              className="btn w-100 btn-outline-secondary px-0"
+                              onClick={() => addToCart(book._id)}
                               disabled={cartItems.some(
                                 (item) => item._id == book._id,
                               )}

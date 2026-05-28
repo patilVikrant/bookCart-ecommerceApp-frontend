@@ -19,20 +19,27 @@ function App() {
   return (
     <BookProvider>
       <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/books" element={<ProductListing />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/books/:id" element={<ProductDetails />} />
-          <Route path="/userprofile" element={<UserProfile />} />
-          <Route path="/userprofile/edit/:id" element={<EditAddressForm />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/orders/:orderId" element={<OrderDetails />} />
-        </Routes>
-        <Footer />
+        <div className="d-flex flex-column min-vh-100">
+          <Header />
+          <main className="flex-grow-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/books" element={<ProductListing />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/books/:id" element={<ProductDetails />} />
+              <Route path="/userprofile" element={<UserProfile />} />
+              <Route
+                path="/userprofile/edit/:id"
+                element={<EditAddressForm />}
+              />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/orders/:orderId" element={<OrderDetails />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
         <ToastContainer
           position="top-center"
           autoClose={2000}

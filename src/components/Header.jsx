@@ -17,10 +17,10 @@ const Header = () => {
     navigate("/books");
   };
   return (
-    <header className="bg-body-tertiary">
-      <nav className="navbar navbar-expand-lg container">
+    <header className="shadow-sm" style={{ backgroundColor: "#0f172a" }}>
+      <nav className="navbar navbar-expand-lg navbar-dark container py-3">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/">
+          <NavLink className="navbar-brand text-white fw-bold" to="/">
             bookCart
           </NavLink>
           <button
@@ -35,25 +35,54 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="d-flex justify-content-center align-items-center navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
+                <NavLink
+                  className="nav-link active"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#3b82f6" : "#ffffff",
+                    fontWeight: isActive ? "600" : "400",
+                  })}
+                  aria-current="page"
+                  to="/"
+                >
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/books">
+                <NavLink
+                  className="nav-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#3b82f6" : "#ffffff",
+                    fontWeight: isActive ? "600" : "400",
+                  })}
+                  to="/books"
+                >
                   All Books
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/wishlist">
+                <NavLink
+                  className="nav-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#3b82f6" : "#ffffff",
+                    fontWeight: isActive ? "600" : "400",
+                  })}
+                  to="/wishlist"
+                >
                   Wishlist{" "}
                   {wishlistItems && <span>({wishlistItems.length})</span>}
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/cart">
+                <NavLink
+                  className="nav-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#3b82f6" : "#ffffff",
+                    fontWeight: isActive ? "600" : "400",
+                  })}
+                  to="/cart"
+                >
                   Cart{" "}
                   {cartItems && (
                     <span>
@@ -71,11 +100,10 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/userprofile">
-                  <img
-                    src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
-                    alt="user-icon"
-                    style={{ width: "25px" }}
-                  />
+                  <i
+                    className="bi bi-person-circle fs-5"
+                    style={{ color: "#ffffff" }}
+                  ></i>
                 </NavLink>
               </li>
             </ul>
@@ -88,7 +116,7 @@ const Header = () => {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-primary fw-semibold" type="submit">
                 Search
               </button>
             </form>
